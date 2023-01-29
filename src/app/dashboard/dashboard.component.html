@@ -1,0 +1,63 @@
+<div *ngIf="!chat.isLoggedIn" class="login-wrapper">
+  <form class="login-form">
+    <div class="mb-3">
+      <label for="username" class="form-label">Enter you username</label>
+      <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username">
+    </div>
+    <!-- <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div> -->
+    <button type="button" (click)="login()" class="login-btn w-100 btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<main *ngIf="chat.isLoggedIn" class="main-box">
+  <div class="users-pane">
+    <h1 class="brand-title">Chata</h1>
+    <ul class="nav flex-column mb-auto">
+      <li *ngFor="let user of chat.users" class="nav-item">
+       <a href="." class="user-link" (click)="initChat($event, user)">
+        <div class="profile-image">
+          <i class="fas fa-user-circle profile-icon"></i>
+          <div class="user-status-icon"></div>
+        </div>
+        <span class="profile-username">{{ user.username | username: username }}</span>
+        <i *ngIf="user.hasNewMessages" class="not-icon fas fa-exclamation-circle"></i>
+       </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="chat-pane">
+    <div *ngIf="!selectedUser.userID" class="noshow">Select a user to start chatting</div>
+    <div *ngIf="selectedUser.userID" class="chat-window">
+      <div class="selected-user">
+        <div class="profile-image mr-4">
+          <i class="fas fa-user-circle profile-icon"></i>
+        </div>
+        <span class="profile-username">{{ selectedUser.username | username: username  }}</span>
+      </div>
+      <div class="messages">
+        <div class="message-single" [ngClass]="{ 'left': !msg.fromSelf, 'right': msg.fromSelf }" *ngFor="let msg of chat.selectedUser.messages">
+          <p class="message-body">{{ msg.content }}</p>
+          <span class="message-time"> {{ msg.timestamp | date:'shortTime' }} </span>
+        </div>
+      </div>
+      <form class="message-form">
+            <div #textBox
+              role="textbox"
+              contenteditable="true"
+              spellcheck="false"
+              aria-multiline="true"
+              class="message-input"
+              id="message"
+              (input)="handleContentChange($event)"
+              (keydown.enter)="submit($event)"
+            ></div>
+            <button class="message-btn" type="button" (click)="sendMessage()">Send</button>
+      </form>
+    </div>
+  </div>
+</main>
+

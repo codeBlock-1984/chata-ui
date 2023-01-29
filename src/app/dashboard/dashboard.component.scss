@@ -1,0 +1,221 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding-top: 200px;
+}
+
+.login-form {
+  width: 400px;
+}
+
+.login-btn {
+  background-color: #3e737c !important;
+  border: #3e737c;
+}
+
+.main-box {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.users-pane {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 300px;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: rgb(250, 250, 250);
+  border-right: solid 1px #ccc;
+  padding: 0;
+  padding-top: 50px;
+}
+
+.brand-title {
+  text-align: center;
+  color: #ba4c65;
+  margin-bottom: 50px;
+}
+
+.chat-pane {
+  display: flex;
+  flex-flow: column nowrap;
+  width: calc(100% - 300px);
+  height: 100%;
+  overflow-y: scroll;
+  background-color: rgb(245, 245, 245);
+}
+
+.user-link {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  padding: 20px;
+  padding-left: 30px;
+}
+
+.user-link:hover {
+  text-decoration: none !important;
+  background-color: #cccccc;
+}
+
+.user-link:active {
+  text-decoration: none !important;
+  background-color: #cccccc;
+}
+
+
+
+.profile-image {
+  position: relative;
+  margin-right: 10px;
+}
+
+.profile-icon {
+  font-size: 1.6rem;
+}
+
+.user-status-icon {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  background-color: #25d366;
+}
+
+.profile-username {
+  margin-bottom: 5px;
+  flex-grow: 1;
+}
+
+.not-icon {
+  margin-bottom: 5px;
+  color: #D0342C;
+}
+
+.noshow {
+  align-self: center;
+  justify-self: center;
+  margin-top: 45%;
+}
+
+.chat-window {
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.selected-user {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #cccccc;
+}
+
+.messages {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.message-single {
+  display: flex;
+  flex-flow: column nowrap;
+  min-width: 100px;
+  max-width: 40%;
+  height: max-content;
+  background-color: #ffffff;
+  padding: 10px;
+  border: solid 1px #cccccc;
+  margin-bottom: 10px;
+}
+
+.left {
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.right {
+  align-self: flex-end;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.message-body {
+  margin-bottom: 5px;
+}
+
+.message-time {
+  width: max-content;
+  align-self: flex-end;
+  font-size: .6rem;
+}
+
+.message-form {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: max-content;
+  justify-content:space-between;
+  align-items: flex-end;
+  margin-top: 10px;
+  padding: 10px;
+  border-top: solid 1px #cccccc;
+}
+
+.message-input {
+  width: calc(100% - 110px);
+  min-height: 38px;
+  line-height: 1rem;
+  font-size: .8rem;
+  max-height: 76px;
+  overflow-y: scroll;
+  border: solid 1px #cccccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 10px;
+  outline: none;
+}
+
+.message-input:focus-within,
+.message-input:focus-visible,
+.message-input:focus {
+  outline: none;
+}
+
+.message-btn {
+  width: 100px !important;
+  height: 38px;
+  color: #ffffff;
+  background-color: #3e737c;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: none;
+}
+
+.message-btn:hover,
+.message-btn:focus,
+.message-btn:focus-within,
+.message-btn:focus-visible {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
